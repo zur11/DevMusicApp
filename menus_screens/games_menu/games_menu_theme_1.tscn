@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwp6abumyqwws"]
+[gd_scene load_steps=8 format=3 uid="uid://c4popeiyn173h"]
 
 [ext_resource type="Script" path="res://menus_screens/games_menu/games_menu.gd" id="1_bwuaj"]
-[ext_resource type="PackedScene" uid="uid://cur4luxydt1p3" path="res://menus_screens/games_menu/go_to_game_button/go_to_game_button.tscn" id="2_qxh74"]
+[ext_resource type="PackedScene" uid="uid://xaa0pbx3ki31" path="res://menus_screens/games_menu/go_to_game_button/go_to_game_button.tscn" id="2_qxh74"]
 [ext_resource type="Resource" uid="uid://2goex2b6fa5l" path="res://games/games_tres/greek_to_anglo.tres" id="3_pkher"]
 [ext_resource type="Resource" uid="uid://1q0rg4j0gecc" path="res://games/games_tres/anglo_to_greek.tres" id="4_q6ben"]
 [ext_resource type="Resource" uid="uid://bmwyqbkd0c1td" path="res://games/games_tres/anglo_to_piano.tres" id="5_3xm5a"]

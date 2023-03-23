@@ -53,20 +53,21 @@ func _set_new_question() -> void:
 
 func _on_daily_tries_reached_signal_received() -> void:
 	var game_achievements = _update_game_achievements_var()
+	var saved_achievements := AchievementsPersistent.load_saved_achievements_from_disk()
+
+	game_achievements.manage_daily_tries_reached_game_signal()
 	
-	game_achievements.manage_daily_tries_reached_game_signal(current_game)
-	
-	AchievementsPersistent.add_game_achievements_to_array(game_achievements)
+	saved_achievements.add_game_achievements_to_array(game_achievements)
 	
 func _on_percentage_reached_signal_received(percentage) -> void:
+	var saved_achievements := AchievementsPersistent.load_saved_achievements_from_disk()
 	var game_achievements = _update_game_achievements_var()
 	
-	game_achievements.manage_percentage_reached_game_signal(current_game, percentage)
-	AchievementsPersistent.add_game_achievements_to_array(game_achievements)
+	game_achievements.manage_percentage_reached_game_signal(percentage)
+	saved_achievements.add_game_achievements_to_array(game_achievements)
 	
 	if game_achievements.h_seventyfive_percent_reached:
 		_manage_global_achievements("seventyfive_percent_in_all_games_reached")
-
 
 func _manage_global_achievements(achievement_name:String) -> void:
 	var saved_achievements := AchievementsPersistent.load_saved_achievements_from_disk()
@@ -74,14 +75,14 @@ func _manage_global_achievements(achievement_name:String) -> void:
 	
 	if achievement_name == "seventyfive_percent_in_all_games_reached":
 		global_achievements.check_seventyfive_percent_in_all_games_achievement()
-	
-	AchievementsPersistent.replace_saved_global_achievements_var(global_achievements)
+		saved_achievements.replace_saved_global_achievements_var(global_achievements)
 
 func _update_game_achievements_var() -> GameAchievements:
 	var game_achievements := current_game.game_achievements
 	var saved_achievements := AchievementsPersistent.load_saved_achievements_from_disk()
 	var game_achievements_array : Array = saved_achievements.game_achievements_array
 	
+	printt("current game achievements: ", game_achievements.h_containing_game_name)
 	if game_achievements_array.size() != 0:
 		for saved_game_achievements in game_achievements_array:
 			if saved_game_achievements.h_containing_game_name == current_game.game_name:

@@ -15,7 +15,7 @@ func _manage_global_achievements():
 	var global_achievements := saved_achievements.global_achievements
 	
 	global_achievements.update_daily_visit_global_achievements()
-	AchievementsPersistent.replace_saved_global_achievements_var(global_achievements)
+	saved_achievements.replace_saved_global_achievements_var(global_achievements)
 	
 #	printt("Times App has been opened: ", global_achievements.h_app_opened_counter)
 #	printt("5 Daily Visits: ", global_achievements.five_daily_visits)

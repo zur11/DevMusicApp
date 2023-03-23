@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxsrc6ltpus87"]
+[gd_scene load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://menus_screens/config_menu/config_menu_theme_1.gd" id="1_bvsg6"]
 

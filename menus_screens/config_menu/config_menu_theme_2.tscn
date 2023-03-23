@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0oe5mnocnh1x"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cxsrc6ltpus87" path="res://menus_screens/config_menu/config_menu_theme_1.tscn" id="1_7u3es"]
+[ext_resource type="PackedScene" path="res://menus_screens/config_menu/config_menu_theme_1.tscn" id="1_7u3es"]
 
 [node name="config_menu_theme2" instance=ExtResource("1_7u3es")]
 

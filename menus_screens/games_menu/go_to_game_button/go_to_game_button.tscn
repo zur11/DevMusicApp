@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cur4luxydt1p3"]
+[gd_scene load_steps=4 format=3 uid="uid://xaa0pbx3ki31"]
 
 [ext_resource type="Script" path="res://menus_screens/games_menu/go_to_game_button/go_to_game_button.gd" id="1_dd2nj"]
 [ext_resource type="Texture2D" uid="uid://bj8rdhthnsj1w" path="res://assets/theme_1/images/go_to_game_button/star_off.png" id="2_fj1ao"]
