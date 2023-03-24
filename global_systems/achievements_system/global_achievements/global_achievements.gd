@@ -34,7 +34,7 @@ func check_seventyfive_percent_in_all_games_achievement() -> void:
 		if game.game_achievements.h_seventyfive_percent_reached:
 			games_reached_seventyfive_percent_counter += 1
 	
-	printt("games that reached 75% counter: ", games_reached_seventyfive_percent_counter)
+#	printt("games that reached 75% counter: ", games_reached_seventyfive_percent_counter)
 	
 	if games_reached_seventyfive_percent_counter == 5:
 			seventyfive_percent_in_all_games_reached = true

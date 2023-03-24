@@ -81,13 +81,12 @@ func _update_game_achievements_var() -> GameAchievements:
 	var game_achievements := current_game.game_achievements
 	var saved_achievements := AchievementsPersistent.load_saved_achievements_from_disk()
 	var game_achievements_array : Array = saved_achievements.game_achievements_array
-	
-	printt("current game achievements: ", game_achievements.h_containing_game_name)
+
 	if game_achievements_array.size() != 0:
 		for saved_game_achievements in game_achievements_array:
 			if saved_game_achievements.h_containing_game_name == current_game.game_name:
 				game_achievements = saved_game_achievements
-	
+
 	return game_achievements
 
 func _on_go_back_to_menu_button_pressed() -> void:
