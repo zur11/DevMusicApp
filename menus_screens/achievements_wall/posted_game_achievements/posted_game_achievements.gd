@@ -24,7 +24,7 @@ func _get_achievements_names():
 				achievements_to_post.append("Eighty Percent Reached")
 			if achievements.fifty_percent_reached:
 				achievements_to_post.append("Fifty Percent Reached")
-			if achievements.three_tried_games:
+			if achievements.three_tried_games_reached:
 				achievements_to_post.append("Three Tried Games")
 			if achievements.daily_tries_reached:
 				achievements_to_post.append("Daily Tries Reached")

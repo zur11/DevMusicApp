@@ -1,24 +1,14 @@
-extends Node
-
-const _SAVED_ACHIEVEMENTS_PATH := "user://achievements.tres"
-
-var achievements_to_save : SavedAchievements
+class_name AchievementsPersistent extends Resource
 
 
-func change_achievements_to_save_var(new_achievements_to_save:SavedAchievements):
-	achievements_to_save = new_achievements_to_save
-
-func _save_achievements_to_disk() -> void:
-	var result = ResourceSaver.save(achievements_to_save, _SAVED_ACHIEVEMENTS_PATH)
+func save_achievements_to_disk(achievements_to_save:SavedAchievements) -> void:
+	var result = ResourceSaver.save(achievements_to_save, "user://achievements.tres")
 	assert(result == OK)
 
 func load_saved_achievements_from_disk() -> SavedAchievements:
-	var saved_achievements
-	if ResourceLoader.exists(_SAVED_ACHIEVEMENTS_PATH):
+	var saved_achievements = SavedAchievements.new()
 	
-		saved_achievements = load(_SAVED_ACHIEVEMENTS_PATH) # as SavedAchievements
-	
-	else: saved_achievements = SavedAchievements.new()
+	if ResourceLoader.exists("user://achievements.tres"):
+		saved_achievements = ResourceLoader.load("user://achievements.tres") # as SavedAchievements
 
 	return saved_achievements
-
