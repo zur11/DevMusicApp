@@ -15,6 +15,7 @@ func add_game_achievements_to_array(new_achievements:GameAchievements) -> void:
 
 	game_achievements_array.append(new_achievements)
 	save_to_disk()
+	
 
 func save_to_disk():
 	achievements_persistent.save_achievements_to_disk(saved_achievements)

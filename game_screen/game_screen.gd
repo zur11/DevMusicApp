@@ -6,7 +6,6 @@ var games : Array[Game]
 
 var current_game: Game = Game.new()
 
-
 func _ready() -> void:
 	set_game_scenes()
 

@@ -10,11 +10,9 @@ func _ready():
 	_get_achievements_names()
 	_add_new_achievement_rows()
 
-
 func _get_achievements_names():
-	var game_achievements : SavedAchievements= AchievementsPersistent.load_saved_achievements_from_disk()
-	
-	var game_achievements_array := game_achievements.game_achievements_array
+
+	var game_achievements_array :Array[GameAchievements] = AchievementsManager.saved_achievements.game_achievements_array
 
 	for achievements in game_achievements_array:
 		if achievements.h_containing_game_name == game_name:
@@ -32,7 +30,7 @@ func _get_achievements_names():
 func _add_new_achievement_rows():
 	
 	for achievement in achievements_to_post:
-		var new_achievement_row : Node = load("res://achievements_wall/achievement_row/achievement_row.tscn").instantiate()
+		var new_achievement_row : Node = load("res://menus_screens/achievements_wall/achievement_row/achievement_row.tscn").instantiate()
 	
 		new_achievement_row.achievement_name = achievement
 		
